@@ -12,11 +12,9 @@ void setup() {
 }
 
 void loop() {
-  
   Serial.println("Bitte Wert von 0 - 180 eingeben: ");
   while(Serial.available() == 0) {};
   servo.write(getInt());
-
 }
 
 int getInt() {
