@@ -28,11 +28,9 @@ void loop() {
   Serial.print("Spannung: ");
   Serial.println(voltage, 1);
   Serial.println();
-
   
   String input = "";
   input = Serial.readStringUntil('\n');
-
 
   if(voltage < uWert) {
     Serial.println("Warnung: Wenig el. Energie im Netz!");
@@ -64,7 +62,6 @@ void loop() {
   }
 
 
-
   if(voltage >= uGrenze && voltage < oGrenze && !f_Akku) {
     digitalWrite(led, HIGH);
 
@@ -84,6 +81,7 @@ void loop() {
     }
   }
 
+  
   if(voltage >= 2.5) {
     Serial.println("Warnung: Netzspannung zu hoch!");
     Serial.println("--> keine Akkus aufladen");
@@ -97,5 +95,4 @@ void loop() {
 
     delay(2000);
   }
-
 }
